@@ -1,0 +1,137 @@
+html{
+    box-sizing: border-box;
+}
+body{
+    margin: 100px;
+    background: #e0dbdb;
+    font-family: Verdana;
+}
+.card{
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    perspective: 1400px;
+    left: 0;
+    transition: all 1s;
+}
+.left-card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    transform-origin: 0 0;
+}
+.left-card img{
+    width: 300px;
+    height: 400px;
+}
+.left-card .card-front, .left-card .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+.left-card .card-back{
+    background: #f4f4f4;
+    transform: rotateY(180deg);
+}
+
+.card.open .left-card{
+    transform: rotateY(-180deg);
+}
+
+.card.open{
+    left: 150px;
+}
+
+.right-card{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    text-align: center;
+        
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.39);
+    color: #444;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.right-card h2{
+    color: crimson;
+}
+
+.right-card img{
+    width: 150px;
+    
+   
+}
+
+
+@media (max-width:774px) {
+    .card{
+        width: 200px;
+        height: 300px;        
+    }
+    
+    .left-card img{
+        width: 200px;
+        height: 300px;
+    }
+
+    .card.open{
+        left: 50px;
+    }
+
+    .right-card h2{
+        color: crimson;
+        font-size: 14px;
+    }
+
+    .right-card p{
+        font-size: 12px;
+        padding: 1rem;
+    }
+    .right-card img{
+        width: 100px;
+    }
+    
+}
+
+@media (max-width:650px) {
+    .card{
+        width: 160px;
+        height: 260px;        
+    }
+    
+    .left-card img{
+        width: 160px;
+        height: 260px;
+    }
+
+    .card.open{
+        left: 80px;
+    }
+
+    .right-card h2{
+        color: crimson;
+        font-size: 14px;
+    }
+
+    .right-card p{
+        font-size: 11px;
+        padding: .4rem;
+    }
+    .right-card img{
+        width: 70px;
+    }
+    
+}
